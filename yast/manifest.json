@@ -1,0 +1,26 @@
+{
+    "manifest_version": 2,
+    "name": "Save Tabs",
+    "permissions": [
+        "tabs",
+        "storage"
+    ],
+    "description": "Save nav session lets you save your opened tabs, and quickly reopen them later",
+    "version": "0.1",
+
+    "browser_action": {
+        "default_icon": {
+            "24": "tabs_24.png"
+        },
+        "default_popup": "popup.html",
+        "default_title": "Save nav session"
+    },
+
+
+    "icons": {
+        "16": "tabs_16.png",
+        "32": "tabs_32.png",
+        "48": "tabs_64.png",
+        "128": "tabs_128.png"
+    }
+}

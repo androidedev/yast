@@ -1,0 +1,217 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Save nav session</title>
+    <style>
+        body {
+            font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+            font-size: 100%;
+            width: 300px;
+        }
+
+        .dataRowClass {
+            border-width: 1px;
+            border-color: darkgrey;
+        }
+
+        .dataRowClassB {
+            margin-bottom: 8px;
+        }
+
+        .textNormal {
+            font-size: medium;
+            font-weight: 500;
+            margin: 0px 4px 0px 0px;
+        }
+
+        .textSmall {
+            font-size: x-small;
+        }
+
+        .btn {
+            font-size: x-small;
+            margin: 0px 4px 0px 0px;
+            padding: 0px;
+            overflow: hidden;
+            border-width: 0;
+            outline: none;
+            border-radius: 3px;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .6);
+            background-color: #BCBCBC;
+            color: #ecf0f1;
+            transition: background-color .3s;
+        }
+
+        .btn:hover,
+        .btn:focus {
+            background-color: darkgray;
+        }
+
+        .btn span {
+            display: block;
+            padding: 3px 8px;
+        }
+
+        .hlButton {
+            background-color: lightgray;
+        }
+
+        .group {
+            position: relative;
+            margin-top: 10px;
+        }
+
+        input {
+            font-size: medium;
+            padding: 10px 10px 10px 5px;
+            display: block;
+            width: 200px;
+            border: none;
+            border-bottom: 1px solid #757575;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        label {
+            color: #999;
+            font-size: normal;
+            font-weight: normal;
+            position: absolute;
+            pointer-events: none;
+            left: 5px;
+            top: 10px;
+            transition: 0.2s ease all;
+            -moz-transition: 0.2s ease all;
+            -webkit-transition: 0.2s ease all;
+        }
+
+        input:focus~label,
+        input:valid~label {
+            top: -8px;
+            font-size: x-small;
+            color: #5264AE;
+        }
+
+        .bar {
+            position: relative;
+            display: block;
+            width: 200px;
+        }
+
+        .bar:before,
+        .bar:after {
+            content: '';
+            height: 2px;
+            width: 0;
+            bottom: 1px;
+            position: absolute;
+            /*background: #5264AE;*/
+            transition: 0.2s ease all;
+            -moz-transition: 0.2s ease all;
+            -webkit-transition: 0.2s ease all;
+        }
+
+        .bar:before {
+            left: 50%;
+        }
+
+        .bar:after {
+            right: 50%;
+        }
+
+        input:focus~.bar:before,
+        input:focus~.bar:after {
+            width: 50%;
+        }
+
+        .highlight {
+            position: absolute;
+            height: 60%;
+            width: 100px;
+            top: 25%;
+            left: 0;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        input:focus~.highlight {
+            -webkit-animation: inputHighlighter 0.3s ease;
+            -moz-animation: inputHighlighter 0.3s ease;
+            animation: inputHighlighter 0.3s ease;
+        }
+
+        @-webkit-keyframes inputHighlighter {
+            from {
+                background: #5264AE;
+            }
+            to {
+                width: 0;
+                background: transparent;
+            }
+        }
+
+        @-moz-keyframes inputHighlighter {
+            from {
+                background: #5264AE;
+            }
+            to {
+                width: 0;
+                background: transparent;
+            }
+        }
+
+        @keyframes inputHighlighter {
+            from {
+                background: #5264AE;
+            }
+            to {
+                width: 0;
+                background: transparent;
+            }
+        }
+
+        #statusBar {
+            margin-top: 12px;
+            font-size: small;
+            color: white;
+            background-color: darkgrey;
+        }
+
+        .rowBack {
+            background-color: #ECECEC;
+            padding-bottom: 4px;
+            padding-left: 4px;
+            border-radius: 8px;
+            margin-bottom: 0px;
+            margin-top: 4px;
+        }
+
+        .rowBackSQ {
+            background-color: #ECECEC;
+            padding-bottom: 2px;
+            padding-left: 4px;
+        }
+    </style>
+    <script src="popup.js"></script>
+</head>
+
+<body>
+    <div class="group rowBack">
+        <input id="inputSessionSaveName" class="rowBackSQ" type="text" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Session Name</label>
+        <button class="btn" type="button" id="btnSaveSession" value="SaveSession"><span>Save Session</span></button>
+        <button class="btn" type="button" id="btnLoadSession" value="LoadSession"><span>Load session</span></button>
+    </div>
+    <div class="rowBack" id="statusBar">
+        &nbsp;
+    </div>
+    <div id="listcontainer">
+    </div>
+</body>
+
+</html>
