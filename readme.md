@@ -38,7 +38,7 @@ All the ones I used have so many options, or use synced storage (i dont' want no
 <table>
     <tr>
         <td>
-            <img alt="ktt time tracker usual" src="./docs/screenshots/sc_1.png">
+            <img alt="yast" src="yast/docs/screenshots/sc_1.png">
         </td>
     </tr>
 </table>
@@ -48,7 +48,7 @@ All the ones I used have so many options, or use synced storage (i dont' want no
 <table>
     <tr>
         <td>
-            <img alt="ktt time tracker usual" src="./docs/screenshots/sc_2.png">
+            <img alt="yast" src="yast/docs/screenshots/sc_2.png">
         </td>
     </tr>
 </table>
